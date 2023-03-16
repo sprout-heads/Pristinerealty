@@ -1,0 +1,93 @@
+﻿@page
+@model Pristinerealty.Web.Areas.Admin.Pages.EditModel
+@{ ViewData["Title"] = "Edit page"; }
+
+<h1>Administration Edit</h1>
+<h5><a class="btn btn-group-lg btn-dark" asp-page="/Index"> <<< Back to List</a></h5>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <link href="~/ckeditor/contents.css" rel="stylesheet" />
+    <title>Edit</title>
+</head>
+<body>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 pt-5">
+
+                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="ApiTitle" />
+                    <input asp-for="article.Id" type="hidden" />
+                    @{ if (!string.IsNullOrEmpty(Model.Message))
+                       {
+                        <div class="alert alert-success" id="success-alert">
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                            <strong>@Model.Message ! </strong>
+                        </div> 
+                        }
+                      }
+                    <div class="form-group">
+                        <label for="Comment" class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" asp-for="article.Title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Comment" class="col-sm-2 control-label">Comment</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" asp-for="article.Comment">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="BlogContent" class="col-sm-2 control-label">BlogContent</label>
+                        <div class="col-sm-10">
+                            <textarea class="mel" name="OnPost" id="OnPost" rows="10" cols="80" asp-for="article.Content"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Title" class="col-sm-2 control-label">Upload</label>
+                        <div class="col-sm-10">
+
+                            <input id="File1" class="form-control" name="files" multiple="multiple" type="file" />
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group row col-sm-4 offset-4">
+                        <img class="img-thumbnail img-fluid" src="@Model.article.ImagePath" asp-append-version="true" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript">CKEDITOR.replace('OnPost', { height: 220 });</script>
+</body>
+</html>
+

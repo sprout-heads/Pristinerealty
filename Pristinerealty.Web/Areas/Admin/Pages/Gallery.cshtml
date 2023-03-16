@@ -1,0 +1,76 @@
+﻿@page
+@model Pristinerealty.Web.Areas.Admin.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+
+    <title>Gallery</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="Title" class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" id="Title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Title" class="col-sm-2 control-label">Upload</label>
+                        <div class="col-sm-10">
+
+                            <input class="form-control" name="files" multiple="multiple" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+
+                </form>
+                <br />
+
+
+                <div class="container gallery-container">
+                    <h2> Gallery</h2>
+                    <div class="row">
+
+                        @if (Model.gallery != null)
+                        {
+                            foreach (var item in Model.gallery)
+                            {
+                                <div class="col-md-4 center-block pt-3 pb-5">
+                                    <div class="section-box-twelve">
+                                        <img src="@item.Path" asp-append-version="true" class="img-responsive img-fluid">
+                                    </div>
+                                    <h6>@item.Title</h6>
+                                    <a href="@Url.Action("DeletePhoto","gallery",new { id=item.Id})" style="float:right">Delete</a>
+                                </div>}
+
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿@page
+@model Pristinerealty.Web.Pages.GalleryModel
+@{ ViewData["Title"] = "Gallery page"; }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/ImgModalStyle.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+   @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+
+
+    <title>Gallery</title>
+</head>
+<body>
+    <section class="rocket   pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <h1>Who we are</h1>
+                    <span class="under">
+                        <hr>
+                    </span>
+                    <p>Located in the heart of Calicut city, and one of the oldest hospitals in the region, the hospital was established in 1940 by Late Dr. P. Balram. From it's early years, the hospital and it's doctors focused on providing access to medical care to the common man, placing service to the poor of utmost importance. His sons, Late Dr. P. Rajendran, Late Dr. P Mohanraj and Late Dr. P. Ramesh Kumar continued the tradition. The hospital is an integral part of the history of Calicut.</p>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <section class="pb-5">
+        <div class="container wrapp-gallery">
+            @if (Model.gallery != null)
+            {
+                foreach (var item in Model.gallery)
+                {
+                    <div class="section-box-twelve">
+                        <!---->
+                        @*<figure>
+                                <a href="#"><button class="btn" style="color: #fff;">More details</button></a>
+                                <h5>@item.Title</h5>
+                            </figure>*@
+                        <img src="@item.Path" asp-append-version="true" width="100%" class="img-responsive" id="@(item.Id)" onclick="return ImageViewer('@item.Id');" alt="@item.Title">
+
+                    </div>
+
+                }
+            }
+        </div>
+        <div id="myModal" class="modal">
+
+
+            <img class="modal-content" id="modalimg"/>
+
+            <div id="caption">
+
+            </div>
+
+            <span class="close">&times;</span>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+            var modal = document.getElementById("myModal");
+
+        var modalImg = document.getElementById("modalimg");
+        var captionText = document.getElementById("caption");
+
+        function ImageViewer(id){
+            modal.style.display = "block";
+            var img = document.getElementById(id);
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+         var span = document.getElementsByClassName("close")[0];
+
+         span.onclick = function() {
+           modal.style.display = "none";
+         }
+            </script>
+
+
+</body>
+</html>

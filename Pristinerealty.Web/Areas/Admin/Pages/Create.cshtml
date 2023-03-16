@@ -1,0 +1,92 @@
+﻿@page
+@model Pristinerealty.Web.Areas.Admin.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create page";
+}
+
+<h1>Administration Create</h1>
+
+<h5><a class="btn btn-group-lg btn-dark" asp-page="/Index"> <<< Back to List</a></h5>
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <title></title>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <link href="~/ckeditor/contents.css" rel="stylesheet" />
+</head>
+<body>
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Title" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Title">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Comment" class="col-sm-2 control-label">Comment</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Comment">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BlogContent" class="col-sm-2 control-label">BlogContent</label>
+            <div class="col-sm-10">
+                <textarea name="OnPost" id="OnPost" rows="10" cols="80">
+                
+            </textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="Title" class="col-sm-2 control-label">Upload</label>
+            <div class="col-sm-10">
+                @*<input id="File1" type="file" asp-for="file" multiple />*@
+                <input class="form-control" name="files" multiple="multiple" type="file" onchange="showimagepreview(this)"/>
+            </div>
+        </div>
+
+
+
+        <div class="form-group row col-sm-4 offset-4">
+            <img class="img-thumbnail img-fluid" src="" id="imgPreview" asp-append-version="true" />
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </div>
+
+
+
+    </form>
+
+    <script type="text/javascript">
+
+        CKEDITOR.replace('OnPost', { height: 220 });
+    </script>
+</body>
+</html>
+
+<script type="text/javascript">
+    function showimagepreview(input) {
+        debugger;
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#imgPreview').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

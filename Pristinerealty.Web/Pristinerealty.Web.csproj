@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>eabd9feb-99a2-4068-87d8-36e006ba7e2b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Templates\**" />
+    <Content Remove="wwwroot\Templates\**" />
+    <EmbeddedResource Remove="wwwroot\Templates\**" />
+    <None Remove="wwwroot\Templates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Admin\Pages\Shared\_AdminLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Admin\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\Admin\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\Admin\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\Admin\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\Admin\css\bootstrap.css.map" />
+    <None Include="wwwroot\Admin\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\Admin\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\Admin\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\Admin\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\Admin\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\Admin\js\bootstrap.js" />
+    <None Include="wwwroot\Admin\js\bootstrap.js.map" />
+    <None Include="wwwroot\Admin\js\bootstrap.min.js" />
+    <None Include="wwwroot\Admin\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\Admin\js\jquery-3.2.1.slim.min.js" />
+    <None Include="wwwroot\Admin\js\navbar.js" />
+    <None Include="wwwroot\Admin\js\popper.min.js" />
+    <None Include="wwwroot\fonts\icofont.woff2" />
+    <None Include="wwwroot\js\bootstrap-datepicker.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\colors.js" />
+    <None Include="wwwroot\js\easing.js" />
+    <None Include="wwwroot\js\gmaps.min.js" />
+    <None Include="wwwroot\js\isotope.pkgd.min.js" />
+    <None Include="wwwroot\js\jquery-migrate-3.0.0.js" />
+    <None Include="wwwroot\js\jquery-ui.min.js" />
+    <None Include="wwwroot\js\jquery.counterup.min.js" />
+    <None Include="wwwroot\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.nav.js" />
+    <None Include="wwwroot\js\jquery.scrollUp.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\map-active.js" />
+    <None Include="wwwroot\js\masonry.pkgd.min.js" />
+    <None Include="wwwroot\js\niceselect.js" />
+    <None Include="wwwroot\js\owl-carousel.js" />
+    <None Include="wwwroot\js\popper.min.js" />
+    <None Include="wwwroot\js\slicknav.min.js" />
+    <None Include="wwwroot\js\steller.js" />
+    <None Include="wwwroot\js\tilt.jquery.min.js" />
+    <None Include="wwwroot\js\wow.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" ExcludeAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\anaesthesia.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\anaesthesia.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pristinerealty.Entity\Pristinerealty.Entity.csproj" />
+    <ProjectReference Include="..\Pristinerealty.Repository\Pristinerealty.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
