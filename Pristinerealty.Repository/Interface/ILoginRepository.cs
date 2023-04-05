@@ -10,9 +10,6 @@ namespace Pristinerealty.Repository.Interface
     {
         Task<int> FindLogin(Login login);
         Task<IEnumerable<Login>> getSessionRank(Login login);
-        Task<int> Add(UserPost userpost);
-        Task<IEnumerable<UserPost>> GetAllUserPost();
-        Task<UserPost> GetUserPostByID(int UserId);
-        Task<int> Update(UserPost userpost);
+       
     }
 }

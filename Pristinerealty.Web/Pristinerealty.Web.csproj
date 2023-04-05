@@ -13,7 +13,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Anaesthesia.cshtml.cs" />
+    <Compile Remove="Pages\Cardiology.cshtml.cs" />
+    <Compile Remove="Pages\Dental.cshtml.cs" />
+    <Compile Remove="Pages\Dermatology.cshtml.cs" />
+    <Compile Remove="Pages\ENT.cshtml.cs" />
+    <Compile Remove="Pages\Gasteroentology.cshtml.cs" />
+    <Compile Remove="Pages\GeneralMedicine.cshtml.cs" />
+    <Compile Remove="Pages\GeneralSurgery.cshtml.cs" />
+    <Compile Remove="Pages\GynecologyAndObstetrics.cshtml.cs" />
+    <Compile Remove="Pages\Orthopaedics.cshtml.cs" />
+    <Compile Remove="Pages\PaediatricsAndNeonatology.cshtml.cs" />
+    <Compile Remove="Pages\SeniorRMO.cshtml.cs" />
+    <Compile Remove="Pages\Urology.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Areas\Admin\Pages\Shared\_AdminLayout.cshtml" />
+    <Content Remove="Pages\Anaesthesia.cshtml" />
+    <Content Remove="Pages\Cardiology.cshtml" />
+    <Content Remove="Pages\Dental.cshtml" />
+    <Content Remove="Pages\Dermatology.cshtml" />
+    <Content Remove="Pages\ENT.cshtml" />
+    <Content Remove="Pages\Gasteroentology.cshtml" />
+    <Content Remove="Pages\GeneralMedicine.cshtml" />
+    <Content Remove="Pages\GeneralSurgery.cshtml" />
+    <Content Remove="Pages\GynecologyAndObstetrics.cshtml" />
+    <Content Remove="Pages\Orthopaedics.cshtml" />
+    <Content Remove="Pages\PaediatricsAndNeonatology.cshtml" />
+    <Content Remove="Pages\SeniorRMO.cshtml" />
+    <Content Remove="Pages\Urology.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,30 +63,22 @@
     <None Include="wwwroot\Admin\js\jquery-3.2.1.slim.min.js" />
     <None Include="wwwroot\Admin\js\navbar.js" />
     <None Include="wwwroot\Admin\js\popper.min.js" />
+    <None Include="wwwroot\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\css\bootstrap.css.map" />
+    <None Include="wwwroot\css\bootstrap.min.css.map" />
     <None Include="wwwroot\fonts\icofont.woff2" />
-    <None Include="wwwroot\js\bootstrap-datepicker.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\bootstrap.js" />
+    <None Include="wwwroot\js\bootstrap.js.map" />
     <None Include="wwwroot\js\bootstrap.min.js" />
-    <None Include="wwwroot\js\colors.js" />
-    <None Include="wwwroot\js\easing.js" />
-    <None Include="wwwroot\js\gmaps.min.js" />
-    <None Include="wwwroot\js\isotope.pkgd.min.js" />
-    <None Include="wwwroot\js\jquery-migrate-3.0.0.js" />
-    <None Include="wwwroot\js\jquery-ui.min.js" />
-    <None Include="wwwroot\js\jquery.counterup.min.js" />
-    <None Include="wwwroot\js\jquery.magnific-popup.min.js" />
-    <None Include="wwwroot\js\jquery.min.js" />
-    <None Include="wwwroot\js\jquery.nav.js" />
-    <None Include="wwwroot\js\jquery.scrollUp.min.js" />
-    <None Include="wwwroot\js\main.js" />
-    <None Include="wwwroot\js\map-active.js" />
-    <None Include="wwwroot\js\masonry.pkgd.min.js" />
-    <None Include="wwwroot\js\niceselect.js" />
-    <None Include="wwwroot\js\owl-carousel.js" />
-    <None Include="wwwroot\js\popper.min.js" />
-    <None Include="wwwroot\js\slicknav.min.js" />
-    <None Include="wwwroot\js\steller.js" />
-    <None Include="wwwroot\js\tilt.jquery.min.js" />
-    <None Include="wwwroot\js\wow.min.js" />
+    <None Include="wwwroot\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 
   <ItemGroup>

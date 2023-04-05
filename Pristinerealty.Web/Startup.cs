@@ -53,7 +53,7 @@ namespace Pristinerealty.Web
              options.Conventions.AuthorizePage("/Admin/Edit");
              options.Conventions.AuthorizePage("/Admin/Gallery");
              options.Conventions.AuthorizePage("/Admin/Index");
-             options.Conventions.AuthorizePage("/Admin/UserpostData");
+             options.Conventions.AuthorizePage("/Admin/CV");
 
              options.Conventions.AllowAnonymousToPage("/Index");
          });
@@ -61,7 +61,7 @@ namespace Pristinerealty.Web
             services.AddTransient<IArticleRepository, ArticleRepository>();
             services.AddTransient<IGalleryRepository, GalleryRepository>();
             services.AddTransient<ILoginRepository, LoginRepository>();
-
+            services.AddTransient<IResumeRepository, ResumeRepository>();
 
             services.AddTransient<IDapperService, DapperService>();
 

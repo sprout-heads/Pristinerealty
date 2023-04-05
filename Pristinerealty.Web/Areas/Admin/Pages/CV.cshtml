@@ -1,0 +1,97 @@
+﻿@page
+@model Pristinerealty.Web.Areas.Admin.Pages.CVModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajendra Hospital - @ViewData["Title"]  </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/style.css" rel="stylesheet" />
+    <title>List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mail-box">
+            @*<aside class="lg-side">*@
+                <div class="inbox-head">
+                    <h3>Resumes</h3>
+                </div>
+                <br />
+                <div class="inbox-body" style="margin-top:20px;">
+                    <div class="mail-option">
+                         
+                        <table class="datatable table-inbox table-hover" style="border:none">
+                            <thead>
+                                <tr class="unread">
+                                    <th class="view-message col-sm-1" hidden="hidden">Id</th>
+                                    <th class="view-message col-sm-2">Name</th>
+                                    <th class="view-message col-sm-2">Number</th>
+                                    <th class="view-message col-sm-3">E-Mail</th>
+                                    <th class="view-message col-sm-2">Place</th>
+                                    <th class="view-message col-sm-2">Message</th>
+                                    <th class="view-message col-sm-2">PDF File</th>
+                                    <th class="col-5"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.cv)
+                                {
+                                   
+                                <tr style="background-color:aliceblue">
+                                    <td hidden="hidden" class="view-message">
+                                        <p>@item.ID</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.Name</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.Mobile</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.Email</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.Location</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.Message</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <p>@item.FileURL</p>
+                                    </td>
+                                    <td onclick="myFunction(this)" class="view-message">
+                                        <form method="post">
+                                            <a class="btn  btn-xs btn-success" asp-page="/View" asp-route-id="@item.ID">
+                                                <i class="glyphicon glyphicon-edit">Details</i>
+                                            </a>&nbsp; &nbsp;
+                                            <button type="submit" class="btn btn-s btn-xs btn-danger" asp-page-handler="MarkRead" asp-route-id="@item.ID" onclick="return confirm('Are you sure to mark the message as read?');">Update</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                   
+
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+            @*</aside>*@
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+
+

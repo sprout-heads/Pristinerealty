@@ -33,15 +33,7 @@ namespace Pristinerealty.Web.Pages
             return Page();
         }
 
-        public async Task<ActionResult> OnPost(UserPost  userpost)
-        {
-            article = await articleRepository.GetAllArticles();
-            
-            await loginRepository.Add(userpost);
-
-            return RedirectToPage("/Index");
-
-        }
+      
 
     }
 }
