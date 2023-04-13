@@ -24,9 +24,7 @@ namespace Pristinerealty.Repository
             dbparams.Add("InputType", "SELECT", DbType.String);
             var result = await Task.FromResult(_dapperService.GetAll<Resumes>("[dbo].[SP_SELECT_Resumes]", dbparams, commandType: CommandType.StoredProcedure));
             return result;
-
         }
-
 
 
         public async Task<IEnumerable<Resumes>> GetAllResumes()
@@ -35,7 +33,6 @@ namespace Pristinerealty.Repository
             dbparams.Add("InputType", "SELECT", DbType.String);
             var result = await Task.FromResult(_dapperService.GetAll<Resumes>("[dbo].[SP_SELECT_Resumes]", dbparams, commandType: CommandType.StoredProcedure));
             return result;
-
         }
 
         public async Task<Resumes> GetById(int id)

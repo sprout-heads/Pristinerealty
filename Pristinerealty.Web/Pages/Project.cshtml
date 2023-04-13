@@ -1,8 +1,9 @@
 ﻿@page
 @model Pristinerealty.Web.Pages.ProjectModel
+
 @{ ViewData["Title"] = "Projects Page"; }
 
-
+<link href="~/ImgModalStyle.css" rel="stylesheet" />
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
@@ -58,7 +59,7 @@
                 <img src="img/appart.jpg?hmac=YUVQvWb_AFQBjRRoPhOjfPqw2kdeEgglmWAD-U39--o" alt="Image">
                 <div class="caption">
                     <h1 class="pb-3">Appartments</h1>
-                    <button class="viewbuton"  asp-area="" asp-page="/Contact">Connect With Us  &nbsp; &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="viewbuton" asp-area="" asp-page="/Contact">Connect With Us  &nbsp; &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
 
             </div>
@@ -68,14 +69,46 @@
                 <img src="img/villas.jpg?hmac=YUVQvWb_AFQBjRRoPhOjfPqw2kdeEgglmWAD-U39--o" alt="Image">
                 <div class="caption">
                     <h1 class="pb-3">villas</h1>
-                    <button class="viewbuton"  asp-area="" asp-page="/Contact">Connect With Us  &nbsp; &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="viewbuton" asp-area="" asp-page="/Contact">Connect With Us  &nbsp; &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
 
             </div>
-
-
-
         </div>
+        <br />
+        <div class="row">
+            @if (Model.project != null)
+            {
+                foreach (var item in Model.project)
+                {
+
+                    <div class="col-lg-4 wrapper-project">
+                        <img src=" @item.ImgSrc" asp-append-version="true" class="galleryimg" id="@(item.Id)" onclick="return ImageViewer('@item.Id');" alt="">
+
+                        <div class="caption">
+                            <h3 class="pb-3"><b>@item.Title</b><br />Client : @item.Client<br />Location : @item.Location</h3>
+                            <button class="viewbuton" asp-area="" asp-page="/Contact">Connect With Us  &nbsp; &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+
+                    </div>
+
+
+                    <div id="myModal" class="modal">
+
+
+                        <img class="modal-content" id="modalimg">
+
+                        <div id="caption">
+
+                        </div>
+
+                        <span class="close">&times;</span>
+                    </div>
+
+                }
+            }
+        </div>
+
+    </div>
 
     </div>
 </section>
@@ -90,3 +123,22 @@
 
     </div>
 </section>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalimg");
+    var captionText = document.getElementById("caption");
+
+    function ImageViewer(id) {
+        modal.style.display = "block";
+        var img = document.getElementById(id);
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>

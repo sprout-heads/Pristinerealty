@@ -54,6 +54,7 @@ namespace Pristinerealty.Web
              options.Conventions.AuthorizePage("/Admin/Gallery");
              options.Conventions.AuthorizePage("/Admin/Index");
              options.Conventions.AuthorizePage("/Admin/CV");
+             options.Conventions.AuthorizePage("/Admin/Contacts");
 
              options.Conventions.AllowAnonymousToPage("/Index");
          });
@@ -62,7 +63,8 @@ namespace Pristinerealty.Web
             services.AddTransient<IGalleryRepository, GalleryRepository>();
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<IResumeRepository, ResumeRepository>();
-
+            services.AddTransient<IUserMessagesRepository, UserMessagesRepository>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<IDapperService, DapperService>();
 
           //  var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");

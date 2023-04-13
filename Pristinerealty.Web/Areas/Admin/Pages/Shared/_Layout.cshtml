@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Admin/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Admin/css/style.css">
 
+    <link href="~/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Admin/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="/img/logo.png">
 
-    <link rel="icon" href="/img/logo.png" >
-
-    <title>@ViewData["Title"] - Rajendra Hospital Admin  </title>
+    <title>@ViewData["Title"] - Pristinerealty Admin  </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/Admin/css/style.css" rel="stylesheet" />
 </head>
@@ -20,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"> <img class="logo" src="img/logo.png"  width="30" height="80"></a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index"> <img class="logo" src="img/logo.png" width="30" height="80"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"> </span>
@@ -36,7 +35,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="Admin" asp-page="/Gallery">Gallery</a>
-                        </li>                        
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="Admin" asp-page="/Project">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="Admin" asp-page="/Contacts">Contacted Users</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-page="/Logout">Logout</a>
                         </li>
@@ -51,9 +56,9 @@
         </main>
     </div>
 
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     @*<script src="~/js/site.js" asp-append-version="true"></script>*@
 
     @RenderSection("Scripts", required: false)

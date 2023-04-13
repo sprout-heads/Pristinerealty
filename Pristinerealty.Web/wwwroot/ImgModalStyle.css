@@ -3,8 +3,10 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    max-width: 600px;
-    max-height: 800px;
+ max-width : 600px;
+ max-height : 800px;
+
+ 
 }
 
     #myImg:hover {
@@ -13,25 +15,25 @@
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: center; /* Stay in place */
+    display:none; /* Hidden by default */
+    position:center; /* Stay in place */
     left: 15%;
     right: 15%;
     top: 6%;
-    width: 70% !important;
     height: 90%; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  
 }
 
 /* Modal Content (Image) */
 .modal-content {
-    top: 10%;
+    top:10%;
     margin: auto;
     display: block;
     width: 100%;
-    max-width: 800px;
-    max-height: 700px;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -40,7 +42,7 @@
     display: block;
     width: 80%;
     max-width: 700px;
-    text-align: center;
+    text-align:center;
     color: #ccc;
     padding: 70px 0;
     height: 150px;

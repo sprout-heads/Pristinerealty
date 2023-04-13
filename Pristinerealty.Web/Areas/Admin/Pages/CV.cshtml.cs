@@ -21,8 +21,7 @@ namespace Pristinerealty.Web.Areas.Admin.Pages
         {
                this.resumeRepository = resumeRepository;
         }
-
-    
+   
 
         public async Task OnGetAsync()
         {
